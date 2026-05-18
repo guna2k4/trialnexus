@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { X, Send } from 'lucide-react'
 
-const API = 'http://localhost:8000'
+const API = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
 const AGENT_META = {
   orchestrator: { label: 'Orchestrator',   icon: '🧠', color: '#818cf8' },

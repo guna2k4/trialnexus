@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { MessageSquare, Send, X } from 'lucide-react'
 import { PORTFOLIO_KPIS } from '../data'
 
-const API = 'http://localhost:8000'
+const API = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
 export default function ChatWindow() {
   const [open,     setOpen]     = useState(false)
