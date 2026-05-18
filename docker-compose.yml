@@ -4,7 +4,7 @@ services:
       context: ./clinical-crm
     container_name: trialnexus-backend
     ports:
-      - "8000:8000"
+      - "8001:8000"
     environment:
       - GEMINI_API_KEY=${GEMINI_API_KEY}
       - ELASTIC_URL=${ELASTIC_URL}
