@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { SlidersHorizontal, ImagePlus, Send, X, ArrowLeft, ChevronRight, Activity, Loader2, User, MapPin, FlaskConical } from 'lucide-react'
 
-const API      = ''
+const API = '/api'
 const PAGE_SZ  = 8
 
 // ── helpers ──────────────────────────────────────────────────
