@@ -17,6 +17,8 @@ services:
   frontend:
     build:
       context: ./control-tower
+      args:
+        - VITE_API_URL=/api
     container_name: trialnexus-frontend
     ports:
       - "3000:80"
