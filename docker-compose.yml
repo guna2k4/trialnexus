@@ -1,7 +1,8 @@
 services:
   backend:
     build:
-      context: ./clinical-crm
+      context: .
+      dockerfile: clinical-crm/Dockerfile
     container_name: trialnexus-backend
     ports:
       - "8001:8000"
