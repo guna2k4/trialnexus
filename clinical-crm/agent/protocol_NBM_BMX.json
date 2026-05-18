@@ -1,0 +1,69 @@
+{
+  "trial_id": "NBM-BMX",
+  "trial_name": "NBM-BMX Orally Administered Phase III Glioblastoma Trial",
+  "phase": "III",
+  "target_condition": "Glioblastoma / High-Grade Brain Tumor",
+  "exclusion_criteria": [
+    {
+      "rule_id": "EX-01",
+      "description": "Prior chemotherapy within 6 months before randomization. 6 months = exactly 180 days.",
+      "event_type": "medication",
+      "event_names": ["Chemotherapy", "Temozolomide", "Carboplatin", "Bevacizumab", "Lomustine"],
+      "lookback_days": 180,
+      "time_rule": "days_ago <= 180"
+    },
+    {
+      "rule_id": "EX-02",
+      "description": "Aspirin or any anticoagulant use within 10 days before randomization.",
+      "event_type": "medication",
+      "event_names": ["Aspirin", "Warfarin", "Heparin", "Rivaroxaban", "Apixaban", "Clopidogrel"],
+      "lookback_days": 10,
+      "time_rule": "days_ago <= 10"
+    },
+    {
+      "rule_id": "EX-03",
+      "description": "Myocardial infarction within 6 months before randomization. 6 months = exactly 180 days.",
+      "event_type": "diagnosis",
+      "event_names": ["Myocardial Infarction", "Heart Attack", "STEMI", "NSTEMI"],
+      "lookback_days": 180,
+      "time_rule": "days_ago <= 180"
+    },
+    {
+      "rule_id": "EX-04",
+      "description": "Active seizure medication within 30 days before randomization. 1 month = exactly 30 days.",
+      "event_type": "medication",
+      "event_names": ["Levetiracetam", "Phenytoin", "Valproate", "Carbamazepine", "Lamotrigine", "Lacosamide"],
+      "lookback_days": 30,
+      "time_rule": "days_ago <= 30"
+    },
+    {
+      "rule_id": "EX-05",
+      "description": "Age strictly outside 18 to 75 years (< 18 or > 75). Check the patients table.",
+      "event_type": "demographic",
+      "condition": "age < 18 OR age > 75"
+    },
+    {
+      "rule_id": "EX-06",
+      "description": "Radiotherapy (any form) within 6 months before randomization. 6 months = exactly 180 days.",
+      "event_type": "procedure",
+      "event_names": ["Radiotherapy IMRT", "Radiotherapy", "Proton Beam Therapy", "Stereotactic Radiosurgery", "Whole Brain Radiation", "IMRT"],
+      "lookback_days": 180,
+      "time_rule": "days_ago <= 180"
+    },
+    {
+      "rule_id": "EX-07",
+      "description": "Immunotherapy within 6 months before randomization. 6 months = exactly 180 days.",
+      "event_type": "medication",
+      "event_names": ["Immunotherapy", "Pembrolizumab", "Nivolumab", "Atezolizumab", "Durvalumab"],
+      "lookback_days": 180,
+      "time_rule": "days_ago <= 180"
+    }
+  ],
+  "timeline_rules": {
+    "6_months_in_days": 180,
+    "3_months_in_days": 90,
+    "1_month_in_days": 30,
+    "10_days": 10,
+    "rule": "ALWAYS use days_ago as an integer column. NEVER use DATE() or relative month functions."
+  }
+}

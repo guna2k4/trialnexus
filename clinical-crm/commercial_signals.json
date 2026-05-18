@@ -1,0 +1,162 @@
+[
+  {
+    "signal_id": "SIG-001",
+    "state": "NY",
+    "drug_target": "Ribociclib",
+    "sentiment": "Negative",
+    "source_type": "YouTube",
+    "topic": "Competitor Drugs",
+    "date": "2025-03-12",
+    "ui_metadata": {
+      "author": "PharmaWatch Weekly",
+      "url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "thumbnail": "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+      "title": "Palbociclib vs Ribociclib: Real-World Burden Analysis 2025"
+    },
+    "transcript": "In today's deep dive we compare palbociclib and ribociclib head to head in HR-positive HER2-negative metastatic breast cancer. The data is clear — competitor drug palbociclib is showing much lower operational burden in community oncology settings. Nurses report easier dose management and fewer neutropenia grade 3 events. Ribociclib's QTc monitoring requirement is a significant friction point. Three out of five KOLs we interviewed switched their default prescribing choice last quarter. Market share in the Mid-Atlantic region shifted 8 points toward the competitor. Payors in New York are now preferring palbociclib on formulary position 1."
+  },
+  {
+    "signal_id": "SIG-002",
+    "state": "CA",
+    "drug_target": "Ribociclib",
+    "sentiment": "Positive",
+    "source_type": "YouTube",
+    "topic": "Real World Evidence",
+    "date": "2025-02-28",
+    "ui_metadata": {
+      "author": "OncologyLive",
+      "url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "thumbnail": "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+      "title": "Ribociclib Real-World OS Data: 5-Year Follow-Up from MONALEESA-2"
+    },
+    "transcript": "The MONALEESA-2 five-year follow-up data presented at ASCO confirms that ribociclib combined with letrozole delivers a median overall survival of 63.9 months — a landmark result for CDK4/6 inhibitor class. Community oncologists in California are rapidly adopting this as first-line standard of care. Academic centers at UCLA and UCSF have updated their treatment pathways to reflect this data. Patient advocacy groups are calling this a paradigm shift. HCP survey data shows 78% of oncologists now consider ribociclib their preferred CDK4/6 inhibitor for premenopausal patients. Prescriptions increased 24% in Q1 2025 in the Pacific region."
+  },
+  {
+    "signal_id": "SIG-003",
+    "state": "TX",
+    "drug_target": "Ribociclib",
+    "sentiment": "Neutral",
+    "source_type": "Twitter",
+    "topic": "Clinical Trial Questions",
+    "date": "2025-04-05",
+    "ui_metadata": {
+      "author": "@OncoDrMartinez",
+      "url": "https://twitter.com/OncoDrMartinez/status/1234567890",
+      "thumbnail": "",
+      "title": "Thread: CDK4/6 inhibitor sequencing after progression"
+    },
+    "transcript": "Thread from Dr. Elena Martinez MD at MD Anderson: What do we do after CDK4/6 inhibitor progression? This is the question I get most from community oncologists right now. For ribociclib specifically — we are seeing patterns of acquired resistance via RB1 loss and cyclin E amplification. The trial data on post-CDK4/6 options is still immature. My current approach is fulvestrant plus PI3K inhibitor if PIK3CA mutated. The field needs clearer sequencing guidelines. NCCN update expected Q3 but no consensus yet. Would love to hear how others are handling this in practice. Replies mostly asking about abemaciclib as an alternative in this setting."
+  },
+  {
+    "signal_id": "SIG-004",
+    "state": "FL",
+    "drug_target": "Ribociclib",
+    "sentiment": "Negative",
+    "source_type": "News",
+    "topic": "Dosing & Safety",
+    "date": "2025-01-19",
+    "ui_metadata": {
+      "author": "MedPage Today",
+      "url": "https://www.medpagetoday.com/mock-article-ribociclib-qtc",
+      "thumbnail": "",
+      "title": "QTc Monitoring Burden Limiting Ribociclib Uptake in Community Settings"
+    },
+    "transcript": "A new survey published in JCO Oncology Practice finds that 41% of community oncologists in the southeastern United States cite QTc interval monitoring as the primary barrier to ribociclib adoption. Many smaller practices lack the infrastructure for mandatory ECG monitoring at cycle 1 day 14. Cardiologists are overwhelmed with referrals. Three oncology groups in Florida have switched defaulting to abemaciclib citing the simpler monitoring protocol. The manufacturers have not provided updated guidance on risk stratification to reduce monitoring frequency. Patient access program gaps in rural Florida were also highlighted as contributing to lower-than-expected market penetration in this region."
+  },
+  {
+    "signal_id": "SIG-005",
+    "state": "IL",
+    "drug_target": "Ribociclib",
+    "sentiment": "Positive",
+    "source_type": "YouTube",
+    "topic": "Diagnostic Alignment",
+    "date": "2025-03-30",
+    "ui_metadata": {
+      "author": "American Cancer Society",
+      "url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "thumbnail": "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+      "title": "Biomarker Testing and CDK4/6 Selection: A Practical Guide for Oncologists"
+    },
+    "transcript": "This educational webinar from ACS covers the latest biomarker-driven approach to CDK4/6 inhibitor selection. Ribociclib shows strongest benefit in patients with high baseline ESR1 wildtype status and PIK3CA wildtype. The panel discusses how companion diagnostic alignment is improving — labs in Chicago and Springfield now offer 72-hour turnaround on the full HR-positive panel. Speakers from Northwestern Medicine describe how structured biomarker programs increased ribociclib appropriate use by 31% in their network. The diagnostic alignment score metric used in field force evaluations is now tied directly to these biomarker ordering rates. Three commercial payers in Illinois have added biomarker testing as a coverage requirement for CDK4/6 prior authorization."
+  },
+  {
+    "signal_id": "SIG-006",
+    "state": "PA",
+    "drug_target": "Ribociclib",
+    "sentiment": "Neutral",
+    "source_type": "Twitter",
+    "topic": "Real World Evidence",
+    "date": "2025-04-15",
+    "ui_metadata": {
+      "author": "@BreastOncologyHub",
+      "url": "https://twitter.com/BreastOncologyHub/status/9876543210",
+      "thumbnail": "",
+      "title": "Real-world ribociclib outcomes thread — FLATIRON data"
+    },
+    "transcript": "Twitter thread summarizing Flatiron Health real-world analysis of ribociclib outcomes across 3200 patients in US community practices. Median PFS in real world 22.8 months vs 25.3 in MONALEESA trial — expected gap due to patient selection. Dose reductions more common in real world 58% vs 43% in trial. Interesting finding: patients who maintained dose intensity at 80% or above had outcomes much closer to trial data. Pennsylvania and Ohio sites showed better dose intensity maintenance than southeastern sites — possibly reflecting site quality differences. Thread generating lots of discussion about how to close this real-world trial gap. Several replies noting need for better patient support programs."
+  },
+  {
+    "signal_id": "SIG-007",
+    "state": "GA",
+    "drug_target": "Ribociclib",
+    "sentiment": "Positive",
+    "source_type": "YouTube",
+    "topic": "Clinical Trial Questions",
+    "date": "2025-02-10",
+    "ui_metadata": {
+      "author": "ASCO Daily News",
+      "url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "thumbnail": "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+      "title": "MONALEESA-7: Ribociclib in Premenopausal Women — Updated Analysis"
+    },
+    "transcript": "ASCO Daily News interview with the principal investigator of MONALEESA-7 discussing the latest updated overall survival analysis. Ribociclib plus endocrine therapy in premenopausal women with HR-positive MBC continues to show a 70.2% overall survival rate at 42 months compared to 46% in the placebo arm. This magnitude of benefit is exceptional for this patient population. HCPs attending the session responded with strong interest — the Q&A lasted 45 minutes past the allotted time. Georgia oncologists in attendance expressed intent to immediately update practice. Field medical team saw a 19% increase in MSL meeting requests in the Southeast following this presentation. Brand perception index jumped 8 points post-ASCO in this region."
+  },
+  {
+    "signal_id": "SIG-008",
+    "state": "OH",
+    "drug_target": "Ribociclib",
+    "sentiment": "Negative",
+    "source_type": "News",
+    "topic": "Competitor Drugs",
+    "date": "2025-03-22",
+    "ui_metadata": {
+      "author": "Fierce Pharma",
+      "url": "https://www.fiercepharma.com/mock-competitor-article",
+      "thumbnail": "",
+      "title": "Abemaciclib Captures Midwest Market Share as Ribociclib Struggles with Access"
+    },
+    "transcript": "Abemaciclib is making significant inroads in the Midwest CDK4/6 inhibitor market according to IQVIA prescription data released this week. In Ohio alone, abemaciclib prescriptions grew 34% year-over-year while ribociclib saw a 6% decline. Key drivers include the adjuvant indication approval which brought abemaciclib into a much larger patient population earlier in the disease course. Oncologists who start patients on abemaciclib adjuvantly are more likely to continue it in the metastatic setting creating a loyalty effect. Ribociclib does not yet have the adjuvant indication. Additionally access barriers including prior authorization requirements in Ohio Medicaid are disproportionately impacting ribociclib. Field teams report increasing pushback at formulary discussions."
+  },
+  {
+    "signal_id": "SIG-009",
+    "state": "MA",
+    "drug_target": "Ribociclib",
+    "sentiment": "Positive",
+    "source_type": "YouTube",
+    "topic": "Dosing & Safety",
+    "date": "2025-04-01",
+    "ui_metadata": {
+      "author": "Dana-Farber Cancer Institute",
+      "url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "thumbnail": "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+      "title": "Managing Ribociclib Safety Profile: Expert Panel Discussion"
+    },
+    "transcript": "Expert panel from Dana-Farber and Massachusetts General Hospital discussing practical strategies for managing ribociclib's safety profile in routine practice. The QTc monitoring concern is real but manageable with a structured algorithm. Our experience with over 400 ribociclib patients shows that only 3.2% required permanent dose reduction due to QTc prolongation. Using a tiered monitoring approach — monthly ECG for first 3 cycles then quarterly — significantly reduces burden without compromising safety. Neutropenia Grade 3 or 4 occurred in 58% but was manageable and rarely led to discontinuation. The panel emphasizes that dose modifications preserve PFS benefit. Boston academic centers now see ribociclib as highly manageable with the right infrastructure."
+  },
+  {
+    "signal_id": "SIG-010",
+    "state": "WA",
+    "drug_target": "Ribociclib",
+    "sentiment": "Neutral",
+    "source_type": "Twitter",
+    "topic": "Real World Evidence",
+    "date": "2025-04-20",
+    "ui_metadata": {
+      "author": "@PrecisionOncWest",
+      "url": "https://twitter.com/PrecisionOncWest/status/1122334455",
+      "thumbnail": "",
+      "title": "West Coast CDK4/6 prescribing survey results — community vs academic"
+    },
+    "transcript": "Sharing results from our informal West Coast oncologist survey on CDK4/6 inhibitor prescribing patterns. 142 respondents from California, Washington, and Oregon. For first-line HR-positive HER2-negative MBC: Ribociclib 41%, Palbociclib 35%, Abemaciclib 24%. In premenopausal specifically ribociclib jumps to 61% first choice reflecting MONALEESA-7 OS data impact. Community oncologists more likely to choose palbociclib citing comfort and familiarity. Academic centers skewing ribociclib and abemaciclib. Most important factors cited: OS data 78%, QoL data 54%, toxicity profile 49%, access and coverage 43%. Several respondents noted their hospital formulary position is the dominant driver over clinical preference."
+  }
+]

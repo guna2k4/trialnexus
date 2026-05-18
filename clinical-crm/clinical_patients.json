@@ -1,0 +1,227 @@
+[
+  {
+    "patient_id": "PT-001",
+    "trial_id": "NBM-BMX",
+    "trial_phase": "III",
+    "state": "TX",
+    "demographics": { "age": 45, "gender": "Male" },
+    "metrics": {
+      "eGFR": 65, "dropout_risk": "High",
+      "enrollment_status": "Enrolled",
+      "site_health_score": 62, "enrollment_rate": 58,
+      "screen_failure_risk": "Medium", "budget_variance": -8
+    },
+    "image_path": "image(3).jpg",
+    "clinical_notes": "Patient reports severe nausea and fatigue post first cycle. Tumor size increased by 2mm on latest MRI. MGMT promoter methylated. IDH wildtype. Currently on reduced dose protocol. Physician flagged for AE review. Blood counts borderline — platelets 78k, Hgb 8.3."
+  },
+  {
+    "patient_id": "PT-002",
+    "trial_id": "PREDICT-RD",
+    "trial_phase": "II",
+    "state": "CA",
+    "demographics": { "age": 38, "gender": "Female" },
+    "metrics": {
+      "eGFR": 82, "dropout_risk": "Low",
+      "enrollment_status": "Enrolled",
+      "site_health_score": 88, "enrollment_rate": 91,
+      "screen_failure_risk": "Low", "budget_variance": 3
+    },
+    "image_path": "image(20).jpg",
+    "clinical_notes": "Patient responding well to treatment. Tumor volume reduced by 18% after 2 cycles. No serious adverse events. Compliant with protocol schedule. Satisfaction survey: 9/10. Blood markers improving — eGFR stable at 82. Recommended for continued enrollment."
+  },
+  {
+    "patient_id": "PT-003",
+    "trial_id": "GBM-RT",
+    "trial_phase": "IV",
+    "state": "NY",
+    "demographics": { "age": 61, "gender": "Male" },
+    "metrics": {
+      "eGFR": 48, "dropout_risk": "High",
+      "enrollment_status": "Screening",
+      "site_health_score": 55, "enrollment_rate": 49,
+      "screen_failure_risk": "High", "budget_variance": -15
+    },
+    "image_path": "image(21).jpg",
+    "clinical_notes": "Elderly patient with comorbidities including CKD stage 3. Glioblastoma multiforme confirmed via biopsy. Awaiting radiotherapy eligibility assessment. Concerns over renal function impacting drug clearance. Family expressed hesitation regarding treatment intensity. High screen failure risk flagged."
+  },
+  {
+    "patient_id": "PT-004",
+    "trial_id": "FMISO-BR",
+    "trial_phase": "II",
+    "state": "FL",
+    "demographics": { "age": 53, "gender": "Female" },
+    "metrics": {
+      "eGFR": 74, "dropout_risk": "Medium",
+      "enrollment_status": "Enrolled",
+      "site_health_score": 71, "enrollment_rate": 74,
+      "screen_failure_risk": "Low", "budget_variance": -2
+    },
+    "image_path": "image(24).jpg",
+    "clinical_notes": "Patient tolerating FMISO PET imaging protocol well. Hypoxia marker showing moderate elevation in tumor core. Breast cancer stage III with node involvement. Completing cycle 3 of 6. Minor skin irritation reported at injection site. No dose modifications required at this time."
+  },
+  {
+    "patient_id": "PT-005",
+    "trial_id": "LUNG-IMM",
+    "trial_phase": "III",
+    "state": "IL",
+    "demographics": { "age": 67, "gender": "Male" },
+    "metrics": {
+      "eGFR": 55, "dropout_risk": "High",
+      "enrollment_status": "Dropout",
+      "site_health_score": 41, "enrollment_rate": 38,
+      "screen_failure_risk": "High", "budget_variance": -22
+    },
+    "image_path": "image(27).jpg",
+    "clinical_notes": "Patient withdrew consent after cycle 2 citing intolerable fatigue and appetite loss. NSCLC stage IIIB confirmed. Immunotherapy plus chemo combination showed initial response but toxicity unmanageable. Dropout classified as adverse event related. Site coordinator follow-up scheduled. Insurance coverage issue also noted."
+  },
+  {
+    "patient_id": "PT-006",
+    "trial_id": "NBM-BMX",
+    "trial_phase": "III",
+    "state": "TX",
+    "demographics": { "age": 42, "gender": "Female" },
+    "metrics": {
+      "eGFR": 78, "dropout_risk": "Low",
+      "enrollment_status": "Enrolled",
+      "site_health_score": 79, "enrollment_rate": 82,
+      "screen_failure_risk": "Low", "budget_variance": 1
+    },
+    "image_path": "image(28).jpg",
+    "clinical_notes": "Female patient showing excellent biomarker response to NBM-BMX oral administration. Tumor regression of 12% after first two cycles. MGMT methylated positive — strong predictor of response. No adverse events above Grade 1. Patient highly compliant and engaged in weekly check-ins. Platelets stable at 180k."
+  },
+  {
+    "patient_id": "PT-007",
+    "trial_id": "FLUO-BR",
+    "trial_phase": "IV",
+    "state": "GA",
+    "demographics": { "age": 49, "gender": "Female" },
+    "metrics": {
+      "eGFR": 91, "dropout_risk": "Low",
+      "enrollment_status": "Completed",
+      "site_health_score": 94, "enrollment_rate": 96,
+      "screen_failure_risk": "Low", "budget_variance": 4
+    },
+    "image_path": "image(34).jpg",
+    "clinical_notes": "Patient completed fluorescence-guided resection successfully. Surgical margins clear. Post-op recovery unremarkable. Fluorescence signal showed high tumor selectivity — 5-ALA uptake excellent. No intraoperative complications. Pathology confirmed complete resection. Patient discharged day 3 post-surgery. Outcomes logged for long-term follow-up registry."
+  },
+  {
+    "patient_id": "PT-008",
+    "trial_id": "GBM-RT",
+    "trial_phase": "IV",
+    "state": "OH",
+    "demographics": { "age": 58, "gender": "Male" },
+    "metrics": {
+      "eGFR": 61, "dropout_risk": "Medium",
+      "enrollment_status": "Enrolled",
+      "site_health_score": 68, "enrollment_rate": 71,
+      "screen_failure_risk": "Medium", "budget_variance": -6
+    },
+    "image_path": "image(36).jpg",
+    "clinical_notes": "Patient undergoing IMRT for GBM. Midline shift visible on latest imaging. Dexamethasone prescribed for cerebral edema control. Radiation fractions 30 of 33 completed. Fatigue score 6/10. Karnofsky performance scale 70. Caregiver involved in all consultations. Awaiting post-radiation MRI at week 4."
+  },
+  {
+    "patient_id": "PT-009",
+    "trial_id": "PREDICT-RD",
+    "trial_phase": "II",
+    "state": "WA",
+    "demographics": { "age": 35, "gender": "Female" },
+    "metrics": {
+      "eGFR": 95, "dropout_risk": "Low",
+      "enrollment_status": "Enrolled",
+      "site_health_score": 91, "enrollment_rate": 94,
+      "screen_failure_risk": "Low", "budget_variance": 5
+    },
+    "image_path": "image(39).jpg",
+    "clinical_notes": "Youngest cohort patient. Rare disease diagnosis confirmed via genetic panel. PREDICT algorithm flagged as high response likelihood. Biomarker panel shows 4 of 5 predictive markers positive. Patient engaged in remote monitoring program. No safety concerns. Site coordinator notes exceptional protocol adherence."
+  },
+  {
+    "patient_id": "PT-010",
+    "trial_id": "LUNG-IMM",
+    "trial_phase": "III",
+    "state": "PA",
+    "demographics": { "age": 71, "gender": "Male" },
+    "metrics": {
+      "eGFR": 43, "dropout_risk": "High",
+      "enrollment_status": "Screening",
+      "site_health_score": 44, "enrollment_rate": 41,
+      "screen_failure_risk": "High", "budget_variance": -18
+    },
+    "image_path": "image(40).jpg",
+    "clinical_notes": "Elderly male with NSCLC and concurrent COPD. Immunotherapy eligibility borderline — PD-L1 expression 45%. Renal function declining, eGFR 43 flagged as concern for combo regimen toxicity. Pulmonologist consult requested. Patient has strong family support. Decision pending multidisciplinary tumor board review next Tuesday."
+  },
+  {
+    "patient_id": "PT-011",
+    "trial_id": "FMISO-BR",
+    "trial_phase": "II",
+    "state": "NC",
+    "demographics": { "age": 44, "gender": "Female" },
+    "metrics": {
+      "eGFR": 88, "dropout_risk": "Low",
+      "enrollment_status": "Enrolled",
+      "site_health_score": 83, "enrollment_rate": 86,
+      "screen_failure_risk": "Low", "budget_variance": 2
+    },
+    "image_path": "image(3).jpg",
+    "clinical_notes": "Patient with triple-negative breast cancer. FMISO PET confirms high hypoxia burden in primary tumor. Cycle 4 initiated. Blood counts within normal limits. Patient reports mild joint pain managed with OTC analgesics. Research team notes high data quality for this case — complete CRF with no missing fields. Excellent candidate for imaging sub-study."
+  },
+  {
+    "patient_id": "PT-012",
+    "trial_id": "NBM-BMX",
+    "trial_phase": "III",
+    "state": "AZ",
+    "demographics": { "age": 55, "gender": "Male" },
+    "metrics": {
+      "eGFR": 69, "dropout_risk": "Medium",
+      "enrollment_status": "Enrolled",
+      "site_health_score": 66, "enrollment_rate": 69,
+      "screen_failure_risk": "Medium", "budget_variance": -4
+    },
+    "image_path": "image(20).jpg",
+    "clinical_notes": "Patient on NBM-BMX cycle 3. Stable disease per RANO criteria. Prior treatment with temozolomide — partial resistance noted. IDH mutant positive, MGMT unmethylated — less favorable profile. Mild hepatotoxicity Grade 1 noted, liver function being monitored weekly. Dose at 80% due to tolerability concerns."
+  },
+  {
+    "patient_id": "PT-013",
+    "trial_id": "FLUO-BR",
+    "trial_phase": "IV",
+    "state": "MA",
+    "demographics": { "age": 51, "gender": "Female" },
+    "metrics": {
+      "eGFR": 86, "dropout_risk": "Low",
+      "enrollment_status": "Completed",
+      "site_health_score": 92, "enrollment_rate": 95,
+      "screen_failure_risk": "Low", "budget_variance": 3
+    },
+    "image_path": "image(21).jpg",
+    "clinical_notes": "Completed fluorescence resection protocol. Excellent surgical outcome. Surgeon noted bright 5-ALA signal clearly delineating tumor margins from healthy tissue. Tumor board confirmed gross total resection. Patient recovered well — discharged on day 2. Quality of life survey at 30-day follow-up: 8.5/10. Enrolled in post-study registry."
+  },
+  {
+    "patient_id": "PT-014",
+    "trial_id": "GBM-RT",
+    "trial_phase": "IV",
+    "state": "MI",
+    "demographics": { "age": 63, "gender": "Male" },
+    "metrics": {
+      "eGFR": 52, "dropout_risk": "High",
+      "enrollment_status": "Enrolled",
+      "site_health_score": 58, "enrollment_rate": 61,
+      "screen_failure_risk": "High", "budget_variance": -11
+    },
+    "image_path": "image(24).jpg",
+    "clinical_notes": "Recurrent GBM after prior resection and temozolomide. Now enrolled in IMRT arm. Tumor recurrence at original site plus new satellite lesion. Performance status declining — KPS dropped from 80 to 60 this month. Proton beam therapy considered but insurance coverage denied. Family requesting palliative care consultation in parallel with trial continuation."
+  },
+  {
+    "patient_id": "PT-015",
+    "trial_id": "PREDICT-RD",
+    "trial_phase": "II",
+    "state": "MN",
+    "demographics": { "age": 29, "gender": "Female" },
+    "metrics": {
+      "eGFR": 99, "dropout_risk": "Low",
+      "enrollment_status": "Enrolled",
+      "site_health_score": 95, "enrollment_rate": 97,
+      "screen_failure_risk": "Low", "budget_variance": 6
+    },
+    "image_path": "image(27).jpg",
+    "clinical_notes": "Youngest participant in the PREDICT-RD cohort. Rare autoimmune-mediated neurological disorder confirmed. All 5 predictive biomarkers positive — ideal responder profile. No prior treatments. Baseline imaging shows moderate white matter changes. Patient highly motivated and research-literate. Remote monitoring device compliance 98%. Zero missing data points to date."
+  }
+]

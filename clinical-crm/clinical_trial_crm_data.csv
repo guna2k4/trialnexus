@@ -1,0 +1,101 @@
+site_id,state,target_enrollment,actual_enrollment,dropout_rate_percentage,field_notes
+SITE_001,TX,121,59,29,Competitor trial in the same hospital is poaching eligible patients.
+SITE_002,OH,120,113,13,Enrollment is on track. Site staff is highly motivated.
+SITE_003,NY,90,29,40,Patients fear the potential side effects mentioned in the consent form.
+SITE_004,MA,113,103,12,Enrollment is on track. Site staff is highly motivated.
+SITE_005,FL,103,96,9,Excellent patient retention this month. No major issues.
+SITE_006,MI,79,74,10,Enrollment is on track. Site staff is highly motivated.
+SITE_007,MI,122,126,14,Doctors find the protocol easy to follow and are referring patients.
+SITE_008,MA,50,46,9,Doctors find the protocol easy to follow and are referring patients.
+SITE_009,GA,147,144,6,Enrollment is on track. Site staff is highly motivated.
+SITE_010,IL,131,125,10,Excellent patient retention this month. No major issues.
+SITE_011,PA,51,51,5,Enrollment is on track. Site staff is highly motivated.
+SITE_012,OH,51,19,39,Competitor trial in the same hospital is poaching eligible patients.
+SITE_013,MI,81,82,13,Enrollment is on track. Site staff is highly motivated.
+SITE_014,CA,147,137,13,Enrollment is on track. Site staff is highly motivated.
+SITE_015,PA,150,144,5,Doctors find the protocol easy to follow and are referring patients.
+SITE_016,MI,115,45,32,Patients are dropping out due to long travel distances to the site.
+SITE_017,FL,105,55,27,Patients are dropping out due to long travel distances to the site.
+SITE_018,MI,57,52,10,Doctors find the protocol easy to follow and are referring patients.
+SITE_019,IL,108,49,38,Doctors complain the inclusion criteria is too strict.
+SITE_020,NY,94,48,40,Site lacks sufficient staff to process the paperwork.
+SITE_021,OH,59,22,40,Site lacks sufficient staff to process the paperwork.
+SITE_022,CA,97,93,13,Doctors find the protocol easy to follow and are referring patients.
+SITE_023,NY,78,67,10,Excellent patient retention this month. No major issues.
+SITE_024,TX,80,44,41,Competitor trial in the same hospital is poaching eligible patients.
+SITE_025,FL,101,97,9,Enrollment is on track. Site staff is highly motivated.
+SITE_026,OH,54,56,11,Enrollment is on track. Site staff is highly motivated.
+SITE_027,MA,115,46,32,Site lacks sufficient staff to process the paperwork.
+SITE_028,IL,70,59,9,Enrollment is on track. Site staff is highly motivated.
+SITE_029,WA,139,67,36,Doctors complain the inclusion criteria is too strict.
+SITE_030,NC,149,81,28,Doctors complain the inclusion criteria is too strict.
+SITE_031,NC,149,152,8,Enrollment is on track. Site staff is highly motivated.
+SITE_032,FL,96,93,5,Enrollment is on track. Site staff is highly motivated.
+SITE_033,IL,101,105,8,Doctors find the protocol easy to follow and are referring patients.
+SITE_034,NY,61,28,41,Competitor trial in the same hospital is poaching eligible patients.
+SITE_035,IL,62,62,12,Enrollment is on track. Site staff is highly motivated.
+SITE_036,PA,51,48,5,Doctors find the protocol easy to follow and are referring patients.
+SITE_037,MI,108,32,45,Site lacks sufficient staff to process the paperwork.
+SITE_038,GA,91,41,31,Site lacks sufficient staff to process the paperwork.
+SITE_039,WA,77,68,15,Enrollment is on track. Site staff is highly motivated.
+SITE_040,MI,110,109,6,Doctors find the protocol easy to follow and are referring patients.
+SITE_041,PA,87,47,33,Patients fear the potential side effects mentioned in the consent form.
+SITE_042,MA,99,100,10,Doctors find the protocol easy to follow and are referring patients.
+SITE_043,GA,133,116,15,Enrollment is on track. Site staff is highly motivated.
+SITE_044,MA,146,74,33,Doctors complain the inclusion criteria is too strict.
+SITE_045,IL,56,24,40,Doctors complain the inclusion criteria is too strict.
+SITE_046,IL,72,25,32,Doctors complain the inclusion criteria is too strict.
+SITE_047,CA,116,116,14,Enrollment is on track. Site staff is highly motivated.
+SITE_048,PA,111,115,15,Excellent patient retention this month. No major issues.
+SITE_049,WA,147,132,13,Enrollment is on track. Site staff is highly motivated.
+SITE_050,NY,110,94,6,Excellent patient retention this month. No major issues.
+SITE_051,MI,142,147,10,Doctors find the protocol easy to follow and are referring patients.
+SITE_052,GA,147,152,14,Excellent patient retention this month. No major issues.
+SITE_053,IL,60,58,7,Excellent patient retention this month. No major issues.
+SITE_054,NY,94,81,5,Doctors find the protocol easy to follow and are referring patients.
+SITE_055,MA,132,124,12,Enrollment is on track. Site staff is highly motivated.
+SITE_056,OH,122,54,33,Doctors complain the inclusion criteria is too strict.
+SITE_057,OH,131,119,8,Excellent patient retention this month. No major issues.
+SITE_058,TX,121,110,13,Enrollment is on track. Site staff is highly motivated.
+SITE_059,WA,132,54,43,Doctors complain the inclusion criteria is too strict.
+SITE_060,GA,116,34,34,Patients are dropping out due to long travel distances to the site.
+SITE_061,CA,61,22,27,Competitor trial in the same hospital is poaching eligible patients.
+SITE_062,CA,127,128,8,Enrollment is on track. Site staff is highly motivated.
+SITE_063,PA,86,51,36,Doctors complain the inclusion criteria is too strict.
+SITE_064,CA,99,57,40,Competitor trial in the same hospital is poaching eligible patients.
+SITE_065,CA,59,24,38,Patients are dropping out due to long travel distances to the site.
+SITE_066,IL,101,87,10,Doctors find the protocol easy to follow and are referring patients.
+SITE_067,IL,136,46,30,Patients fear the potential side effects mentioned in the consent form.
+SITE_068,CA,79,77,13,Enrollment is on track. Site staff is highly motivated.
+SITE_069,OH,74,71,10,Excellent patient retention this month. No major issues.
+SITE_070,NC,111,110,15,Doctors find the protocol easy to follow and are referring patients.
+SITE_071,TX,94,91,5,Doctors find the protocol easy to follow and are referring patients.
+SITE_072,FL,75,63,14,Doctors find the protocol easy to follow and are referring patients.
+SITE_073,OH,53,27,44,Site lacks sufficient staff to process the paperwork.
+SITE_074,WA,53,48,12,Excellent patient retention this month. No major issues.
+SITE_075,OH,146,148,6,Excellent patient retention this month. No major issues.
+SITE_076,OH,52,53,12,Excellent patient retention this month. No major issues.
+SITE_077,NC,138,62,31,Doctors complain the inclusion criteria is too strict.
+SITE_078,TX,102,102,5,Excellent patient retention this month. No major issues.
+SITE_079,FL,66,28,33,Patients are dropping out due to long travel distances to the site.
+SITE_080,IL,147,73,26,Patients are dropping out due to long travel distances to the site.
+SITE_081,PA,55,48,14,Excellent patient retention this month. No major issues.
+SITE_082,NY,92,48,26,Site lacks sufficient staff to process the paperwork.
+SITE_083,PA,127,123,15,Enrollment is on track. Site staff is highly motivated.
+SITE_084,MI,135,120,14,Excellent patient retention this month. No major issues.
+SITE_085,OH,116,43,32,Site lacks sufficient staff to process the paperwork.
+SITE_086,MI,116,112,11,Excellent patient retention this month. No major issues.
+SITE_087,GA,149,84,31,Patients fear the potential side effects mentioned in the consent form.
+SITE_088,MI,117,112,12,Enrollment is on track. Site staff is highly motivated.
+SITE_089,MI,134,119,5,Doctors find the protocol easy to follow and are referring patients.
+SITE_090,GA,137,138,9,Excellent patient retention this month. No major issues.
+SITE_091,TX,119,124,12,Doctors find the protocol easy to follow and are referring patients.
+SITE_092,GA,85,82,15,Excellent patient retention this month. No major issues.
+SITE_093,PA,91,83,11,Excellent patient retention this month. No major issues.
+SITE_094,OH,116,56,29,Competitor trial in the same hospital is poaching eligible patients.
+SITE_095,WA,94,89,8,Excellent patient retention this month. No major issues.
+SITE_096,CA,104,102,13,Enrollment is on track. Site staff is highly motivated.
+SITE_097,PA,137,124,6,Excellent patient retention this month. No major issues.
+SITE_098,WA,96,90,10,Doctors find the protocol easy to follow and are referring patients.
+SITE_099,FL,85,31,31,Competitor trial in the same hospital is poaching eligible patients.
+SITE_100,NC,85,73,8,Doctors find the protocol easy to follow and are referring patients.
