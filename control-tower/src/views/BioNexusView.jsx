@@ -554,6 +554,8 @@ export default function TrialNexusView({ trialName = 'NBM-BMX Administered Orall
                 insufficient:vals.filter(v => v.phase2_status === 'INSUFFICIENT_DATA').length,
                 disqualified:vals.filter(v => v.phase2_status === 'DISQUALIFIED').length,
               })
+              // Auto-select first patient if none was selected (e.g. all excluded via SQL gate)
+              setP2Selected(cur => cur ?? (Object.keys(prev).find(pid => prev[pid]) ?? null))
               return prev
             })
           }
@@ -1232,8 +1234,8 @@ export default function TrialNexusView({ trialName = 'NBM-BMX Administered Orall
             })() : (
               <div className="flex items-center justify-center h-full text-[#94A3B8]">
                 <div className="text-center">
-                  <Loader2 size={28} className="mx-auto mb-3 opacity-30 animate-spin" />
-                  <p className="text-sm">Results streaming in — click a patient card when ready</p>
+                  <Loader2 size={28} className={`mx-auto mb-3 opacity-30 ${p2Streaming ? 'animate-spin' : 'opacity-0'}`} />
+                  <p className="text-sm">{p2Done ? 'Select a patient card to view results' : 'Results streaming in — click a patient card when ready'}</p>
                 </div>
               </div>
             )}

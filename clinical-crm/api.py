@@ -177,7 +177,7 @@ async def search_patients(
             "surgery":        src.get("surgery", ""),
             "matchPercentage":src.get("matchPercentage", 0),
             "imageRef":       image_ref,
-            "imageUrl":       f"/images/{image_ref}" if image_ref else "",
+            "imageUrl":       f"/api/images/{image_ref}" if image_ref else "",
             "clinicalText":   src.get("clinicalText", ""),
             "score":          round(float(hit["_score"]), 4),
         })
@@ -207,7 +207,7 @@ def get_all_patients():
             "surgery":        src.get("surgery", ""),
             "matchPercentage":src.get("matchPercentage", 0),
             "imageRef":       image_ref,
-            "imageUrl":       f"/images/{image_ref}" if image_ref else "",
+            "imageUrl":       f"/api/images/{image_ref}" if image_ref else "",
             "clinicalText":   src.get("clinicalText", ""),
         })
     return JSONResponse(content={"patients": patients, "total": len(patients)})
@@ -577,7 +577,7 @@ def cohort_search(req: CohortSearchRequest):
             "site_health_score": src.get("site_health_score"),
             "enrollment_rate":   src.get("enrollment_rate"),
             "clinical_notes":    src.get("clinical_notes"),
-            "image_url": f"/images/{src['image_path']}" if src.get("image_path") else "",
+            "image_url": f"/api/images/{src['image_path']}" if src.get("image_path") else "",
             "similarity_score":  round(float(hit["_score"]), 4),
         })
 
