@@ -14,93 +14,7 @@ import uvicorn
 
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
 
-_ES_INDICES = ["brain_patients", "clinical_trial_crm", "patients", "commercial_signals"]
-
-def _wait_for_es(max_seconds=180):
-    """Block until local ES is accepting connections."""
-    import time
-    deadline = time.time() + max_seconds
-    while time.time() < deadline:
-        try:
-            es.cluster.health(wait_for_status="yellow", timeout="5s")
-            print("[ES] local Elasticsearch ready")
-            return True
-        except Exception:
-            print("[ES] waiting for Elasticsearch…")
-            time.sleep(5)
-    print("[ES] WARNING: Elasticsearch did not become ready in time")
-    return False
-
-def _migrate_es_from_cloud():
-    """One-time migration: scroll all docs from Elastic Cloud and bulk-insert locally."""
-    if not _wait_for_es():
-        return
-    cloud_url = os.getenv("ELASTIC_URL", "")
-    cloud_key  = os.getenv("ELASTIC_API_KEY", "")
-    if not cloud_url or not cloud_key:
-        print("[ES] No cloud credentials — skipping migration")
-        return
-
-    cloud_es = Elasticsearch(cloud_url, api_key=cloud_key)
-
-    for idx in _ES_INDICES:
-        # Skip if local already has data
-        try:
-            if es.indices.exists(index=idx):
-                count = es.count(index=idx)["count"]
-                if count > 0:
-                    print(f"[ES] {idx}: {count} docs already local — skip")
-                    continue
-        except Exception:
-            pass
-
-        # Check index exists on cloud
-        try:
-            if not cloud_es.indices.exists(index=idx):
-                print(f"[ES] {idx}: not found on cloud — skip")
-                continue
-        except Exception as exc:
-            print(f"[ES] {idx}: could not reach cloud — {exc}")
-            continue
-
-        # Copy mapping from cloud then create local index
-        try:
-            mapping_resp = cloud_es.indices.get_mapping(index=idx)
-            mapping = mapping_resp[idx]["mappings"]
-            if es.indices.exists(index=idx):
-                es.indices.delete(index=idx)
-            es.indices.create(index=idx, mappings=mapping)
-            print(f"[ES] {idx}: index created with cloud mapping")
-        except Exception as exc:
-            print(f"[ES] {idx}: mapping copy failed — {exc}")
-            continue
-
-        # Scroll all docs from cloud and bulk-insert locally
-        try:
-            print(f"[ES] {idx}: pulling from Elastic Cloud…")
-            resp = cloud_es.search(index=idx, scroll="2m", size=500, body={"query": {"match_all": {}}})
-            scroll_id = resp["_scroll_id"]
-            hits = resp["hits"]["hits"]
-            total = 0
-            while hits:
-                bulk_body = []
-                for hit in hits:
-                    bulk_body.append({"index": {"_index": idx, "_id": hit["_id"]}})
-                    bulk_body.append(hit["_source"])
-                es.bulk(operations=bulk_body, request_timeout=60)
-                total += len(hits)
-                resp = cloud_es.scroll(scroll_id=scroll_id, scroll="2m")
-                scroll_id = resp["_scroll_id"]
-                hits = resp["hits"]["hits"]
-            try:
-                cloud_es.clear_scroll(scroll_id=scroll_id)
-            except Exception:
-                pass
-            print(f"[ES] {idx}: ✓ {total} docs migrated")
-        except Exception as exc:
-            print(f"[ES] {idx}: migration failed — {exc}")
-
-# ── Build patients.db + migrate ES on startup ──────────────────
+# ── Build patients.db on startup ──────────────────────────────
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     try:
@@ -114,12 +28,6 @@ async def lifespan(app: FastAPI):
         print("[startup] patients.db ready")
     except Exception as e:
         print(f"[startup] WARNING: could not build patients.db — {e}")
-
-    try:
-        import asyncio
-        await asyncio.to_thread(_migrate_es_from_cloud)
-    except Exception as e:
-        print(f"[startup] WARNING: ES migration error — {e}")
 
     yield
 
@@ -203,7 +111,7 @@ async def _fl_stream(messages: list, max_tokens: int):
         clean = _fl_think_strip(item, think_state)
         if clean:
             yield clean
-es = Elasticsearch("http://elasticsearch:9200")
+es = Elasticsearch(os.getenv("ELASTIC_URL"), api_key=os.getenv("ELASTIC_API_KEY"))
 
 
 def embed_multimodal(image_bytes: bytes, query_text: str) -> list[float]:
