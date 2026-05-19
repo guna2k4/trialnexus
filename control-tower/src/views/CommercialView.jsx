@@ -680,6 +680,7 @@ export default function CommercialView() {
           web_sources:      last.sources         || [],
         }),
       })
+      if (!res.ok) throw new Error(`Server error ${res.status} — check backend logs`)
       const reader  = res.body.getReader()
       const decoder = new TextDecoder()
       let buf = ''
@@ -698,6 +699,7 @@ export default function CommercialView() {
       }
     } catch (e) {
       setReport(`Failed to generate report: ${e.message}`)
+    } finally {
       setReportLoading(false)
     }
   }
