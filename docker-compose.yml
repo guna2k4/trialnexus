@@ -2,21 +2,17 @@ services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.13.4
     container_name: trialnexus-elasticsearch
+    command:
+      - elasticsearch
+      - -Ediscovery.type=single-node
+      - -Expack.security.enabled=false
+      - -Expack.security.http.ssl.enabled=false
+      - -Ereindex.remote.whitelist=*.elastic.cloud:443,*.elastic.cloud:9243,*.es.amazonaws.com:443
     environment:
-      - discovery.type=single-node
-      - xpack.security.enabled=false
-      - xpack.security.http.ssl.enabled=false
-      - reindex.remote.whitelist=*.elastic.cloud:443,*.elastic.cloud:9243,*.es.amazonaws.com:443
       - ES_JAVA_OPTS=-Xms1g -Xmx1g
     volumes:
       - es_data:/usr/share/elasticsearch/data
     restart: unless-stopped
-    healthcheck:
-      test: ["CMD-SHELL", "curl -sf http://localhost:9200/_cluster/health?wait_for_status=yellow || exit 1"]
-      interval: 20s
-      timeout: 10s
-      retries: 15
-      start_period: 90s
 
   backend:
     build:
@@ -24,8 +20,7 @@ services:
       dockerfile: clinical-crm/Dockerfile
     container_name: trialnexus-backend
     depends_on:
-      elasticsearch:
-        condition: service_healthy
+      - elasticsearch
     ports:
       - "8001:8000"
     environment:

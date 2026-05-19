@@ -16,8 +16,25 @@ load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
 
 _ES_INDICES = ["brain_patients", "clinical_trial_crm", "patients", "commercial_signals"]
 
+def _wait_for_es(max_seconds=180):
+    """Block until local ES is accepting connections."""
+    import time
+    deadline = time.time() + max_seconds
+    while time.time() < deadline:
+        try:
+            es.cluster.health(wait_for_status="yellow", timeout="5s")
+            print("[ES] local Elasticsearch ready")
+            return True
+        except Exception:
+            print("[ES] waiting for Elasticsearch…")
+            time.sleep(5)
+    print("[ES] WARNING: Elasticsearch did not become ready in time")
+    return False
+
 def _migrate_es_from_cloud():
     """One-time migration: copy all indices from Elastic Cloud to local ES."""
+    if not _wait_for_es():
+        return
     cloud_url = os.getenv("ELASTIC_URL", "")
     cloud_key  = os.getenv("ELASTIC_API_KEY", "")
     if not cloud_url or not cloud_key:
