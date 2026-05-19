@@ -60,4 +60,4 @@ Fully deployed on **Vultr** — backend, frontend, and vector database all runni
 
 ---
 
-Built for the Vultr Hackathon 2025
+Built for the Vultr Hackathon 2026
