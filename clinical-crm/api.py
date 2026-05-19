@@ -32,7 +32,7 @@ def _wait_for_es(max_seconds=180):
     return False
 
 def _migrate_es_from_cloud():
-    """One-time migration: copy all indices from Elastic Cloud to local ES."""
+    """One-time migration: scroll all docs from Elastic Cloud and bulk-insert locally."""
     if not _wait_for_es():
         return
     cloud_url = os.getenv("ELASTIC_URL", "")
@@ -54,6 +54,15 @@ def _migrate_es_from_cloud():
         except Exception:
             pass
 
+        # Check index exists on cloud
+        try:
+            if not cloud_es.indices.exists(index=idx):
+                print(f"[ES] {idx}: not found on cloud — skip")
+                continue
+        except Exception as exc:
+            print(f"[ES] {idx}: could not reach cloud — {exc}")
+            continue
+
         # Copy mapping from cloud then create local index
         try:
             mapping_resp = cloud_es.indices.get_mapping(index=idx)
@@ -66,27 +75,30 @@ def _migrate_es_from_cloud():
             print(f"[ES] {idx}: mapping copy failed — {exc}")
             continue
 
-        # Reindex from remote
+        # Scroll all docs from cloud and bulk-insert locally
         try:
             print(f"[ES] {idx}: pulling from Elastic Cloud…")
-            result = es.reindex(
-                body={
-                    "source": {
-                        "remote": {
-                            "host": cloud_url,
-                            "headers": {"Authorization": f"ApiKey {cloud_key}"},
-                        },
-                        "index": idx,
-                        "size": 100,
-                    },
-                    "dest": {"index": idx},
-                },
-                wait_for_completion=True,
-                request_timeout=300,
-            )
-            print(f"[ES] {idx}: ✓ {result.get('created', 0)} docs migrated")
+            resp = cloud_es.search(index=idx, scroll="2m", size=500, body={"query": {"match_all": {}}})
+            scroll_id = resp["_scroll_id"]
+            hits = resp["hits"]["hits"]
+            total = 0
+            while hits:
+                bulk_body = []
+                for hit in hits:
+                    bulk_body.append({"index": {"_index": idx, "_id": hit["_id"]}})
+                    bulk_body.append(hit["_source"])
+                es.bulk(operations=bulk_body, request_timeout=60)
+                total += len(hits)
+                resp = cloud_es.scroll(scroll_id=scroll_id, scroll="2m")
+                scroll_id = resp["_scroll_id"]
+                hits = resp["hits"]["hits"]
+            try:
+                cloud_es.clear_scroll(scroll_id=scroll_id)
+            except Exception:
+                pass
+            print(f"[ES] {idx}: ✓ {total} docs migrated")
         except Exception as exc:
-            print(f"[ES] {idx}: reindex failed — {exc}")
+            print(f"[ES] {idx}: migration failed — {exc}")
 
 # ── Build patients.db + migrate ES on startup ──────────────────
 @asynccontextmanager
