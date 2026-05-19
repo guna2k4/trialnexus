@@ -9,10 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-es = Elasticsearch(
-    os.getenv("ELASTIC_URL"),
-    api_key=os.getenv("ELASTIC_API_KEY")
-)
+es = Elasticsearch(os.getenv("ES_URL", "http://localhost:9200"))
 
 def create_index():
     es.indices.create(index="brain_patients", mappings={
@@ -38,20 +35,27 @@ def load_image(image_path):
     with open(image_path, "rb") as f:
         return f.read()
 
-def embed_multimodal(image_path, clinical_text):
+def embed_multimodal(image_path, clinical_text, max_retries=5):
     image_bytes = load_image(image_path)
-    result = client.models.embed_content(
-        model="gemini-embedding-2",
-        contents=[
-            types.Part.from_bytes(
-                data=image_bytes,
-                mime_type="image/jpeg"
-            ),
-            clinical_text
-        ],
-        config=types.EmbedContentConfig(output_dimensionality=768)
-    )
-    return result.embeddings[0].values
+    for attempt in range(max_retries):
+        try:
+            result = client.models.embed_content(
+                model="gemini-embedding-2",
+                contents=[
+                    types.Part.from_bytes(data=image_bytes, mime_type="image/jpeg"),
+                    clinical_text
+                ],
+                config=types.EmbedContentConfig(output_dimensionality=768)
+            )
+            return result.embeddings[0].values
+        except Exception as e:
+            if "429" in str(e) or "quota" in str(e).lower() or "rate" in str(e).lower():
+                wait = 30 * (attempt + 1)
+                print(f"  ⏳ Rate limited — waiting {wait}s (retry {attempt+1}/{max_retries})...")
+                time.sleep(wait)
+            else:
+                raise
+    raise RuntimeError("Embedding failed after max retries")
 
 patients = [
     {"patientId": "Brain_MRI_020", "sex": "Male",   "age": 48, "tumorSize": "4.5 cm", "tumorGrade": "IV",  "histologicType": "Glioblastoma",        "mgmtStatus": "Unmethylated", "idhStatus": "Wildtype", "surgery": "Yes",         "matchPercentage": 100, "imageRef": "image(20).jpg"},
@@ -86,7 +90,6 @@ if __name__ == "__main__":
         print(f"✅ Indexed: {p['patientId']}")
 
         if i < len(patients) - 1:
-            print(f"⏳ Waiting 30 seconds before next upload...")
-            time.sleep(30)
+            time.sleep(1)
 
     print("\n🎉 All 10 patients indexed into Elastic Cloud!")

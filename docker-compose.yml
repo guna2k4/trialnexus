@@ -7,11 +7,12 @@ services:
       - -Ediscovery.type=single-node
       - -Expack.security.enabled=false
       - -Expack.security.http.ssl.enabled=false
-      - -Ereindex.remote.whitelist=*.elastic.cloud:443,*.elastic.cloud:9243,*.es.amazonaws.com:443
     environment:
       - ES_JAVA_OPTS=-Xms1g -Xmx1g
     volumes:
       - es_data:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
     restart: unless-stopped
 
   backend:

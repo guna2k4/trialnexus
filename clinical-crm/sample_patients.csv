@@ -1,0 +1,4 @@
+patientId,sex,age,tumorSize,tumorGrade,histologicType,mgmtStatus,idhStatus,surgery,matchPercentage,imageRef
+Brain_MRI_020,Male,48,4.5 cm,IV,Glioblastoma,Unmethylated,Wildtype,Yes,100,image(20).jpg
+Brain_MRI_021,Male,45,3.8 cm,IV,Glioblastoma,Unmethylated,Mutant,Biopsy Only,95,image(21).jpg
+Brain_MRI_028,Female,41,4.2 cm,IV,Glioblastoma,Methylated,Mutant,Yes,85,image(28).jpg
