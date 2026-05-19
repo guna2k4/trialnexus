@@ -529,9 +529,7 @@ export default function TrialNexusView({ trialName = 'NBM-BMX Administered Orall
                     }
                   }))
                 })
-                // Auto-select first excluded patient so right panel shows immediately
-                setP2Selected(data.excluded[0])
-                forceSelectNextRef.current = false
+                // Don't auto-select excluded patients — let phase2 results select first qualified patient
               }
               await new Promise(r => setTimeout(r, 1000))
               setAgentScreen(false)
