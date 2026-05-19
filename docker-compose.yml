@@ -1,9 +1,28 @@
 services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.13.4
+    container_name: trialnexus-elasticsearch
+    environment:
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+      - ./clinical-crm/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:9200/_cluster/health?wait_for_status=yellow || exit 1"]
+      interval: 20s
+      timeout: 10s
+      retries: 15
+      start_period: 90s
+
   backend:
     build:
       context: .
       dockerfile: clinical-crm/Dockerfile
     container_name: trialnexus-backend
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
     ports:
       - "8001:8000"
     environment:
@@ -25,3 +44,6 @@ services:
     depends_on:
       - backend
     restart: unless-stopped
+
+volumes:
+  es_data:

@@ -1,0 +1,5 @@
+cluster.name: trialnexus
+discovery.type: single-node
+xpack.security.enabled: false
+xpack.security.http.ssl.enabled: false
+reindex.remote.whitelist: "*.elastic.cloud:443, *.elastic.cloud:9243, *.es.amazonaws.com:443"

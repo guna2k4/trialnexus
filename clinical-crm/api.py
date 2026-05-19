@@ -14,7 +14,64 @@ import uvicorn
 
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
 
-# ── Build patients.db only if it doesn't exist yet ────────────
+_ES_INDICES = ["brain_patients", "clinical_trial_crm", "patients", "commercial_signals"]
+
+def _migrate_es_from_cloud():
+    """One-time migration: copy all indices from Elastic Cloud to local ES."""
+    cloud_url = os.getenv("ELASTIC_URL", "")
+    cloud_key  = os.getenv("ELASTIC_API_KEY", "")
+    if not cloud_url or not cloud_key:
+        print("[ES] No cloud credentials — skipping migration")
+        return
+
+    cloud_es = Elasticsearch(cloud_url, api_key=cloud_key)
+
+    for idx in _ES_INDICES:
+        # Skip if local already has data
+        try:
+            if es.indices.exists(index=idx):
+                count = es.count(index=idx)["count"]
+                if count > 0:
+                    print(f"[ES] {idx}: {count} docs already local — skip")
+                    continue
+        except Exception:
+            pass
+
+        # Copy mapping from cloud then create local index
+        try:
+            mapping_resp = cloud_es.indices.get_mapping(index=idx)
+            mapping = mapping_resp[idx]["mappings"]
+            if es.indices.exists(index=idx):
+                es.indices.delete(index=idx)
+            es.indices.create(index=idx, mappings=mapping)
+            print(f"[ES] {idx}: index created with cloud mapping")
+        except Exception as exc:
+            print(f"[ES] {idx}: mapping copy failed — {exc}")
+            continue
+
+        # Reindex from remote
+        try:
+            print(f"[ES] {idx}: pulling from Elastic Cloud…")
+            result = es.reindex(
+                body={
+                    "source": {
+                        "remote": {
+                            "host": cloud_url,
+                            "headers": {"Authorization": f"ApiKey {cloud_key}"},
+                        },
+                        "index": idx,
+                        "size": 100,
+                    },
+                    "dest": {"index": idx},
+                },
+                wait_for_completion=True,
+                request_timeout=300,
+            )
+            print(f"[ES] {idx}: ✓ {result.get('created', 0)} docs migrated")
+        except Exception as exc:
+            print(f"[ES] {idx}: reindex failed — {exc}")
+
+# ── Build patients.db + migrate ES on startup ──────────────────
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     try:
@@ -28,6 +85,13 @@ async def lifespan(app: FastAPI):
         print("[startup] patients.db ready")
     except Exception as e:
         print(f"[startup] WARNING: could not build patients.db — {e}")
+
+    try:
+        import asyncio
+        await asyncio.to_thread(_migrate_es_from_cloud)
+    except Exception as e:
+        print(f"[startup] WARNING: ES migration error — {e}")
+
     yield
 
 app = FastAPI(title="Clinical Trial Patient Matching API", lifespan=lifespan)
@@ -110,10 +174,7 @@ async def _fl_stream(messages: list, max_tokens: int):
         clean = _fl_think_strip(item, think_state)
         if clean:
             yield clean
-es = Elasticsearch(
-    os.getenv("ELASTIC_URL"),
-    api_key=os.getenv("ELASTIC_API_KEY"),
-)
+es = Elasticsearch("http://elasticsearch:9200")
 
 
 def embed_multimodal(image_bytes: bytes, query_text: str) -> list[float]:
