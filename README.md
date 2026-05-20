@@ -6,8 +6,7 @@ An AI-powered clinical trial patient matching platform that combines multimodal 
 
 ## Live Demo
 
-**Frontend:** http://utsvkrdiogsdq2md63dn1dy.144.202.52.13.sslip.io
-
+**Frontend:** http://g7iwxzpqloqjzxa4gtv7kf9j.45.76.25.101.sslip.io/
 
 ---
 
